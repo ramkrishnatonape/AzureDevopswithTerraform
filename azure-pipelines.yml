@@ -35,13 +35,12 @@ stages:
   jobs:
     - job: Provision
       displayName: 'Provisioningcontainer instance'
-      pool: 
-        vmImage: ubuntu-latest
+      pool: default
       variables: 
         - group: TerraformEnvVars
       steps:
       - script: 
-          set -e 
+          set
 
           terraform init -input=false
           terraform apply -unput=false -auto-approve
