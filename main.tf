@@ -1,6 +1,14 @@
 provider "azurerm" {
-    version = "2.5.0"
     features {}
+}
+
+terraform  {
+  backend "azurerm" {
+      resource_group_name = "tfrg_storage_rm"
+      storage_account_name = "tfstorageram"
+      container_name = "tfstate"
+      key = "terraform.tfstate"
+  }
 }
 
 resource "azurerm_resource_group" "tf_test" {
