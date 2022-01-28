@@ -17,8 +17,7 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool:
-      name: DESKTOP-S8P5R2S
+    pool: DESKTOP-S8P5R2S
     # pool: 
     #  vmImage: ubuntu-latest
     steps:
